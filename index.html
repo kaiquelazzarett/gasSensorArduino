@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Sensor de Gás Feito com Arduino de Baixo Custo</title>
+
+	<link rel="stylesheet" media="(orientation: landscape)" href="landscape.css" type="text/css">
+
+	<link rel="stylesheet" media="(orientation: portrait)" href="portrait.css" type="text/css">
+
+	<link rel="stylesheet" media="(max-aspect-ratio: 3 / 4) or (max-aspect-ratio: 9 / 16) or
+				(max-aspect-ratio: 9 / 18)" href="mobile.css" type="text/css">
+
+	<script src="http://kit.fontawesome.com/84350ffff7.js" crossorigin="anonymous">
+	</script>
+</head>
+
+<body>
+	<header>
+		<ul>
+			<li><a href="#">Início</a></li>
+			<li><a href="#problematic">Problemática</a></li>
+			<li><a href="#gases">Gases</a></li>
+			<li><a href="#article">Artigo</a></li>
+			<li><a href="#prototype">Protótipo</a></li>
+			<li><a href="#aboutus">Sobre Nós</a></li>
+		</ul>
+	</header>
+
+	<div class="streched welcome">
+		<h1>Sensor de gás de baixo custo</h1>
+		<div class="txtanimado">
+			Venha se aventura no nosso projeto. <span></span>
+		</div>
+	</div>
+
+	<div class="streched introduction">
+		<div class="division">
+			<h1>O que é o nosso projeto?</h1>
+			<p>
+				O nosso trabalho propõe o desenvolvimento de uma ferramenta rápida e precisa
+				para detecção de gases utilizando Arduino. A detecção de gases perigosos em
+				ambientes industriais é vital para a segurança. Combinando o Arduino com
+				sensores avançados, oferecemos uma solução acessível e eficiente para esse
+				monitoramento.
+			</p>
+		</div>
+
+		<div class="division">
+			<div class="card shadow">
+				<i class="fa-solid fa-microchip fa-4x"> </i>
+				<div class="cardtext">
+					<h2>Protótipo</h2>
+					<p> Utilizamos a plataforma Tinkercad para produzir um protótipo da nossa ideia </p>
+				</div>
+			</div>
+
+			<div class="card shadow">
+				<i class="fa-solid fa-code-compare fa-4x"></i>
+				<div class="cardtext">
+					<h2>Testes</h2>
+					<p>Ao testar nossa ideia, podemos verificar sua eficiência e capacidade</p>
+				</div>
+			</div>
+
+			<div class="card shadow">
+				<i class="fa-solid fa-bullhorn fa-4x"></i>
+
+				<div class="cardtext">
+					<h2>Divulgação</h2>
+					<p>Esse site foi desenvolvido para mostrar a nossa ideia para mais pessoas</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="problematic" class="streched problematic">
+		<h1>Problemática</h1>
+
+		<div class="problems">
+			<div class="problem">
+				<div class="icon-problem">
+					<i class="fa-5x fa-solid fa-fire  "></i>
+				</div>
+				<div class="text-problem">
+					<h2>Risco para os trabalhadores</h2>
+					<p>
+						O manuseio de materiais tóxicos em indústrias representa riscos à saúde dos trabalhadores, como
+						intoxicações por gases como o monóxido de carbono, que podem causar sintomas graves e até morte.
+						Gases inflamáveis também aumentam o risco de incêndios e explosões. Para prevenir esses
+						acidentes, é essencial implementar sistemas de detecção e alerta de vazamentos, protegendo os
+						funcionários e o ambiente de trabalho.
+					</p>
+				</div>
+			</div>
+
+			<div class="problem">
+				<div class="icon-problem">
+					<i class="fa-5x fa-solid fa-bars-progress" id="icon"></i>
+
+				</div>
+				<div class="text-problem">
+					<h2>Meio ambiente </h2>
+					<p>
+						O vazamento de gás afeta não apenas os seres humanos, mas também o meio ambiente, causando
+						poluição, danos à flora e fauna, e aumentando os riscos de incêndios e explosões. O cloro, por
+						exemplo, é perigoso, podendo causar pneumonia química, queimaduras e até morte, além de ser
+						altamente reativo. Embora seja facilmente detectável por cheiro e cor, gases inodoros e
+						invisíveis apresentam maiores riscos, destacando a importância de sistemas de monitoramento para
+						identificar sua circulação.
+					</p>
+				</div>
+			</div>
+
+			<div class="problem">
+				<div class="icon-problem">
+					<i class="fa-5x fa-solid fa-industry" id="icon"></i>
+				</div>
+				<div class="text-problem">
+					<h2>Índices de vazamentos</h2>
+					<p>
+						Em 2020, na Índia, ocorreu o vazamento de gás de uma fábrica da LG Polymers, causando pelo menos
+						12 mortes e a hospitalização de milhares de pessoas no estado de Andhra Pradesh. O incidente
+						envolveu estireno, uma substância cancerígena segundo a IARC. A origem do vazamento foi
+						identificada em dois tanques de 5.000 toneladas sem a devida vigilância, espalhando-se por um
+						raio de até 5 km. A falta de supervisão no sistema pneumático da fábrica foi apontada como
+						provável causa. Este e outros casos semelhantes destacam a necessidade de sistemas de
+						monitoramento de gás para garantir a segurança dos trabalhadores.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="streched problematic">
+		<h1>Índices de Problemática</h1>
+
+		<div class="rates">
+			<div class="line">
+				<div class="rate shadow">
+					<i class="fa-5x fa-solid fa-seedling"></i>
+
+					<h2>Indices de vazamentos</h2>
+
+					<p>
+						Incidentes graves, como o vazamento de estireno na Índia em 2020 (12 mortos) e outros em Punjab
+						e Itaquaquecetuba em 2023, destacam a falta de vigilância em sistemas industriais.
+					</p>
+				</div>
+
+
+				<div class="rate shadow">
+					<i class="fa-5x fa-solid fa-mask-ventilator"></i>
+
+					<h2>Sistemas de prevenção atual</h2>
+
+					<p>
+						Sensores modernos detectam gases tóxicos e combustíveis, mas seus custos elevados (como R$
+						13.000 por dispositivo) dificultam a adoção em pequenas empresas.
+					</p>
+				</div>
+			</div>
+
+			<div class="line">
+				<div class="rate shadow">
+					<i class="fa-5x fa-solid fa-robot"></i>
+
+					<h2>Risco para os trabalhadores</h2>
+
+					<p>
+						Exposição a gases, como monóxido de carbono, pode causar intoxicação, danos pulmonares e morte,
+						além de riscos de explosões e incêndios.
+					</p>
+				</div>
+
+				<div class="rate shadow">
+					<i class="fa-5x fa-solid fa-radiation"></i>
+
+					<h2>Meio ambiente</h2>
+
+					<p>
+						Vazamentos poluem ecossistemas, prejudicam a fauna e flora e aumentam os riscos de incêndios,
+						tornando essencial o uso de sistemas de detecção.
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	
+
+	<div id="article" class="streched article">
+		<h1>Artigo</h1>
+
+		<embed src="./pdf/Detector de gás - Artigo.pdf" type="application/pdf" height="600px" width="800px" />
+
+		<a class="button" href="https://drive.google.com/file/d/1fJG5v2PkrGcTx3GfHugP08t0P2IHjuyq/view?usp=sharing">Ler
+			artigo</a>
+	</div>
+
+
+	<div id="prototype" class="streched prototype">
+		<h1>Protótipo</h1>
+
+		<img class="light" src="./src/prototipo.png" alt="Ilustração">
+
+		<p>
+			O protótipo desenvolvido é um detector de gases industriais baseado na plataforma Arduino, projetado para
+			identificar e alertar sobre vazamentos de gases tóxicos ou inflamáveis. Ele utiliza um sensor MQ-2 para
+			detectar concentrações perigosas de gases no ambiente, enviando sinais ao microcontrolador Arduino Uno, que
+			processa os dados. O sistema inclui LEDs para indicação visual (verde, amarelo e vermelho), um buzzer para
+			alerta sonoro e uma válvula automatizada que interrompe o fluxo de gás em caso de vazamento crítico. O
+			projeto foi simulado no Tinkercad, demonstrando sua funcionalidade e viabilidade, com o objetivo de oferecer
+			uma solução acessível para prevenir acidentes em ambientes industriais.
+		</p>
+
+		<a class="button" href="https://www.tinkercad.com/things/6ECwqBa6rLb-sensor-vazamento-gas?sharecode=obnAQcnsyLVAOZqbxUNauC3rGlsax-wnqwkU47a-eMw">Acessar Protótipo</a>
+	</div>
+
+	<div class="streched advantages">
+		<h1>Vantagens</h1>
+
+		<div class="columns">
+			<div class="column">
+				<div class="advantage">
+					<div class="advantage-content">
+						<i class="fa-5x fa-solid fa-sack-dollar"></i>
+
+						<p>
+							Baixo custo de implementação: O protótipo utiliza componentes acessíveis, como o Arduino Uno
+							e o
+							sensor MQ-2, tornando-o mais viável economicamente em comparação com sensores comerciais
+							caros,
+							como o MultiRAE Lite.
+						</p>
+					</div>
+					<div class="advantage-content">
+						<i class="fa-5x fa-solid fa-fingerprint"></i>
+
+						<p>
+							Automação e segurança aprimorada: O sistema é capaz de detectar vazamentos de gases
+							automaticamente, acionando alarmes sonoros e visuais, além de fechar válvulas para
+							interromper o
+							fluxo de gás, minimizando os riscos para trabalhadores e instalações.
+						</p>
+					</div>
+				</div>
+
+				<div class="advantage">
+					<div class="advantage-content">
+						<i class="fa-5x fa-solid fa-memory"></i>
+
+						<p>
+							Simplicidade e adaptabilidade: O protótipo foi projetado de forma intuitiva, utilizando
+							simulações no Tinkercad e componentes fáceis de integrar, o que permite sua aplicação em
+							diferentes contextos industriais.
+						</p>
+					</div>
+					<div class="advantage-content">
+						<i class="fa-5x fa-solid fa-triangle-exclamation"></i>
+						<p>
+							Prevenção de acidentes ambientais: O projeto inclui mecanismos que reduzem a emissão de
+							gases no
+							ambiente em caso de vazamento, contribuindo para a proteção da flora, fauna e redução de
+							riscos
+							de incêndios e explosões. Essa vantagem é destacada na seção sobre impacto ambiental e
+							funcionamento do protótipo no arquivo.
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="aboutus" class="streched slider">
+		<h1>Sobre Nós</h1>
+		<div class="section">
+
+			<div class="conteudo">
+				<img src="./src/kaique.jpg" class="integrantes">
+				<p class="section-text">PROGRAMADOR </p>
+			</div>
+
+			<div class="conteudo">
+				<img src="./src/pedrao.jpg" class="integrantes">
+				<p class="section-text"> REDATOR TÉCNICO </p>
+			</div>
+
+			<div class="conteudo">
+				<img src="./src/miria.jpg" class="integrantes">
+				<p class="section-text"> SCRUM MASTER </p>
+			</div>
+		</div>
+
+
+		<div class="section">
+
+			<div class="conteudo">
+				<img src="./src/pedro.jpg" class="integrantes">
+				<p class="section-text"> REDATOR TÉCNICO </p>
+			</div>
+
+			<div class="conteudo">
+				<img src="./src/vini.jpg" class="integrantes">
+				<p class="section-text"> SIMULADOR DE PROCESSOS </p>
+			</div>
+
+		</div>
+
+	</div>
+
+	</div>
+
+	<footer>
+		<h1>Contatos</h1>
+
+		<table>
+			<tr>
+				<td>
+					<i class="fa-solid fa-location-pin fa-1x"></i>
+				</td>
+
+				<td>
+					R. Paulo Gontijo de Carvalho, 452 Cerqueira César,<br>
+					São Paulo - SP, 05404-020
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<i class="fa-solid fa-envelope fa-1x"></i>
+				</td>
+
+				<td>kaique.lazzaretti@etec.sp.gov.br</td>
+			</tr>
+			<tr>
+				<td>
+					<i class="fa-solid fa-phone fa-1x"></i>
+				</td>
+
+				<td>11 97544-2982</td>
+			</tr>
+		</table>
+
+		<p>Copyright &copy; Todos os direitos reservados</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

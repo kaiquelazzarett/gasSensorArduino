@@ -1,0 +1,466 @@
+:root {
+	--primary-color: #454ab5;
+	--secondary-color: #4a4c75;
+	--terciary-color: #f5ca20;
+	--text-color: #fff;
+	--text-color-var: #ccc;
+	--text-color-dark: #000;
+	--background-color: #050728;
+	--background-color-dark: #030513;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: var(--text-color);
+	background-color: var(--background-color);
+  scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+h1 { font-size: 3rem; }
+
+button {
+	width: 150px;
+	height: 70px;
+	margin-top: 2vw;	/* only in side view */
+	border: none;
+	border-radius: 10px;
+	font-size: 1rem;
+	font-weight: bold;
+	color: var(--text-color-dark);
+	background-color: var(--terciary-color);
+}
+
+header {
+  width: 50%;
+  height: 15vh;
+  position: fixed;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25% 0 25%;
+  background: linear-gradient(var(--background-color-dark), transparent);
+}
+
+header ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  list-style-type: none;
+}
+
+header a {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.center {
+  margin: auto;
+}
+
+footer {
+  height: 30vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+
+footer h1 { font-size: 2rem; }
+
+footer i { margin-right: 10px; }
+
+footer td { text-align: start; }
+
+footer p {
+  width: 100%;
+  position: absolute;
+  bottom: -2.5vh;
+  padding: 1vh 0 1vh 0;
+  color: #000;
+  background-color: #fff;
+}
+
+.streched {
+	width: auto;
+	height: auto;
+	display: flex;
+	flex-direction: column; /* vertical sequence */
+	align-items: center;	/* center verticaly */
+	justify-content: center;	/* center horizontaly */
+  gap: 1rem;
+	box-sizing: border-box;
+	padding: 10vh 15vw 10vh 15vw;
+}
+
+.shadow { box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2); }
+
+.light { box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.2); }
+
+.welcome {
+  height: 90vh;
+  align-items: start;
+}
+
+.welcome h1 {
+	margin-bottom: -2.5vh;
+	text-align: start;
+	font-size: 4rem;
+	font-weight: bold;
+}
+
+.txtanimado{
+  text-align: start;
+  color: var(--text-color-var);
+  font-size: 2rem;
+}
+
+.txtanimado span{
+ position: relative;
+}
+
+.txtanimado span::before{
+  content: "";
+  color: var(--terciary-color); 
+  animation: palavras 15s infinite;
+
+
+}
+
+.txtanimado span::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  border-left: 2px solid var(--terciary-color);
+  right: -10px;
+  animation: cursor .8s infinite, digita 20s steps(70) infinite;
+  width: calc(100% + 18px);
+  background-color: var(--background-color);
+}
+
+@keyframes digita {
+  10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+    width: 0;
+  }
+  5%, 20%, 25%, 40%, 45%, 60%,65%, 80%,85%{
+    width: calc(100% + 18px);
+  }
+}
+
+@keyframes cursor {
+  0%{
+    border-left: 2px solid var(--background-color);
+  }
+}
+
+@keyframes palavras {
+  0%,25%{
+    content: "Garantia" ;
+  }
+  26%,50%{
+    content: "Segurança";
+  }
+  51%,75%{
+    content: "Benefício";
+  }
+  76%,100%{
+    content: "Tecnologia";
+  }
+}
+
+.introduction h1 { font-size: 2rem; }
+
+.division {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 8% 5% 8%;
+  border: solid 2px var(--primary-color);
+  text-align: justify;
+}
+
+
+.division:nth-child(1) { 
+  border-bottom: solid 1px var(--primary-color); 
+  width: 100%;
+  font-size: 1.3rem;
+}
+
+.division:nth-child(2) {
+  flex-direction: row;
+  gap: 2vw;
+  border-top: solid 1px var(--primary-color);
+  width: 100%;
+}
+
+.card {
+  width: 50vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  gap: 0.9rem;
+  padding: 15px;
+  background-color: var(--background-color-dark);
+}
+
+.cardtext{
+  display: flex;
+  gap: 0.7rem;
+  flex-direction: column;
+ justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.card i{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card p{
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.problems {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.problem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 100px;
+  padding: 3%;
+  text-align: justify;
+  position: relative;
+  transition: 0.5s;
+}
+
+.problem:hover{
+  height: 500px;
+  background-color: var(--secondary-color);
+
+}
+
+.problem #icon{
+  top: -100px;
+  transition: 0.5;
+  margin-bottom: 40px;
+  height: 1rem;
+}
+
+.problem:hover #icon{
+  top: -100px;
+  scale: 1.2;
+}
+
+.problem:hover .text-problem{
+  color: var(--text-color);
+  overflow: hidden;
+  text-align: center;
+}
+
+.text-problem h2{
+  color: var(--text-color);
+  text-align: center;
+}
+
+.text-problem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+  color: var(--background-color);
+}
+
+.rates {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;	/* keep same as .line gap */
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8vh;
+  gap: 2vw;	/* keep same as .rates gap */
+}
+
+.rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1vw;
+  border-radius: 15px;
+  background-color: var(--background-color-dark);
+}
+
+.rate img {
+  width: 100%;
+  height: 20vh;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+}
+
+.problematic button { margin-top: 7vh; }
+
+.gases table {
+	/* cell spacing is defined in html */
+	border: solid 1px #fff;	/* keep same as th and td */
+}
+
+.gases td, .gases th {
+	padding: 5vh 5vw 5vh 5vw;
+	border: solid 1px #fff;	/* keep same as table */
+}
+
+.button{
+  width: 15%;
+  background-color: var(--terciary-color);
+  height: 4rem;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color-dark);
+  font-size: 1rem;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  font-weight: bold;
+}
+
+.article p {
+  width: 60%;
+}
+
+
+.prototype img {
+  width: 40vw;
+  height: 45vh;
+  margin-bottom: 2vh;
+  color: #000;  /* alt text color */
+  background-color: #fff;
+}
+
+.prototype p {
+  width: 60%;
+}
+
+.columns {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.advantage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between ;
+  gap: 2vw;
+  width: 100%;
+}
+
+.advantage-content{
+  width: 50%;
+}
+
+.advantage p {
+  text-align: justify;
+}
+
+.column:nth-child(2) .advantage {
+  flex-direction: row-reverse;
+}
+
+.section{
+  display: flex;
+  width: 100vw;
+  height: 50vh;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.conteudo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  padding: 10px;
+}
+
+
+.integrantes{
+  width: 18rem;
+  height: 16rem;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+
+
+.conteudo p{
+  color: var(--text-color);
+}
+
+.section-text{
+  font-size: 2rem;
+  font-weight: 700;
+}
+
